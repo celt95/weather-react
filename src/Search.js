@@ -21,7 +21,7 @@ export default function Search() {
       <form onSubmit={handleSubmit}>
         <input
           type="search"
-          Placeholder="Type a city..."
+          placeholder="Type a city..."
           onChange={updateCity}
         />
         <input type="submit" value="Search" />

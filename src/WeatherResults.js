@@ -1,4 +1,8 @@
 import React from "react";
 export default function WeatherResults(props) {
-  return <div className="weather-results">These are the weather results</div>;
+  if (props.result === null) {
+    return null;
+  } else {
+    return <div>temperature : {props.result.main.temp}°C</div>;
+  }
 }
