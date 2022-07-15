@@ -1,4 +1,10 @@
 .App {
-  max-width: 800px;
   margin: 50px auto;
+  font-family: "League Spartan", sans-serif;
+}
+.container.container-with-padding {
+  background: #fef575;
+  margin: 60px auto;
+  padding: 50px 35px;
+  width: 800px;
 }
