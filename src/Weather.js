@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import "./WeatherResult";
 import axios from "axios";
-import "./FormattedDate";
-import FormattedDate from "./FormattedDate";
+import WeatherResult from "./WeatherResult";
 export default function Weather(props) {
   const [result, setResult] = useState({ ready: false });
   function handleResponse(response) {
@@ -29,33 +29,7 @@ export default function Weather(props) {
           />
           <input type="submit" value="Search" className="search-button" />
         </form>
-        <div className="row">
-          <div className="col-6 city-values">
-            <h1>{result.city}</h1>
-            <div>
-              Last updated:{" "}
-              <span>
-                <FormattedDate date={result.date} />
-              </span>
-            </div>
-            <div>
-              <span>{Math.round(result.temperature)}</span>
-              <a href="#">°C</a> |<a href="#">°F</a>
-            </div>
-            <div className="weather-details">
-              <div className="text-capitalize">{result.description}</div>
-              <div>
-                Humidity: <span> {result.humidity} </span> %
-              </div>
-              <div>
-                Wind: <span>{Math.round(result.wind)}</span> m/s
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
-          </div>
-        </div>
+        <WeatherResult result={result} />
       </div>
     );
   } else {
