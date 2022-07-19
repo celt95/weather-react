@@ -20,6 +20,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon,
     });
   }
   function updateCity(event) {
@@ -40,7 +41,7 @@ export default function Weather(props) {
             className="search-engine"
             onChange={updateCity}
           />
-          <input type="submit" value="Search" className="search-button" />
+          <input type="submit" value="Search" className="search-button mt-3" />
         </form>
         <WeatherResult result={result} />
       </div>

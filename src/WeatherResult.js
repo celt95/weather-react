@@ -29,8 +29,7 @@ export default function WeatherResult(props) {
           </div>
         </div>
         <div className="col-6">
-          <MainWeatherIcon />
-          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+          <MainWeatherIcon code={props.result.icon} />
         </div>
       </div>
     </div>
