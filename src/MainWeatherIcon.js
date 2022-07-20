@@ -25,5 +25,11 @@ export default function MainWeatherIcon(props) {
     "50n": RainyDay,
   };
 
-  return <img className="mw-100" src={codeMapping[props.code]} />;
+  return (
+    <img
+      className="mw-100"
+      src={codeMapping[props.code]}
+      alt="Icon displaying weather"
+    />
+  );
 }

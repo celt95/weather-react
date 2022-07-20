@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 export default function WeatherTemperature(props) {
   const [unit, setUnit] = useState("Celsius");
