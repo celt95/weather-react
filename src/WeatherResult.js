@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import MainWeatherIcon from "./MainWeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherResult(props) {
   return (
@@ -9,14 +10,13 @@ export default function WeatherResult(props) {
         <div className="col-6 city-values">
           <h1>{props.result.city}</h1>
           <div>
-            Last updated:{" "}
+            Last updated:
             <span>
               <FormattedDate date={props.result.date} />
             </span>
           </div>
           <div>
-            <span>{Math.round(props.result.temperature)}</span>
-            <a href="#">°C</a> |<a href="#">°F</a>
+            <WeatherTemperature celsius={props.result.temperature} />
           </div>
           <div className="weather-details">
             <div className="text-capitalize">{props.result.description}</div>
