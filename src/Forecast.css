@@ -1,0 +1,13 @@
+.day-weather {
+  text-align: center;
+  background: #8de8fd;
+  margin: 0 12px;
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.day-weather:hover {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-out;
+}

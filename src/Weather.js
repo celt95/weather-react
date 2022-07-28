@@ -3,17 +3,20 @@ import "./Weather.css";
 import "./WeatherResult";
 import axios from "axios";
 import WeatherResult from "./WeatherResult";
+import Forecast from "./Forecast";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });
 
   function search() {
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f8076bd4bc37c523b0e21539b245eabc&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f8836810bbb4fb14b77719552c52c6d9&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleResponse(response) {
+    console.log(response.data);
     setResult({
       ready: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -44,6 +47,7 @@ export default function Weather(props) {
           <input type="submit" value="Search" className="search-button mt-3" />
         </form>
         <WeatherResult result={result} />
+        <Forecast coordinates={result.coordinates} />
       </div>
     );
   } else {
